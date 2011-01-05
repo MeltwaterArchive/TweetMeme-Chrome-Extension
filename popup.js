@@ -140,51 +140,45 @@ document.observe("dom:loaded", function() {
 							data = transport.responseText.evalJSON();
 							if (data.status == "success") {
 								console.log('Data is valid.');
-								/**
-								* Globally set the URL ID
-								*/
-								url_id = extractId(data.story.tm_link);
-								console.log('URL ID is ' + url_id);
 
 								/**
 								* Update the tweet text box with the RT and title
-								*
-								* Set the ID in the form
 								*/
-								$("tweettext").update(formatTweet(data.story.title));
-								$("id").writeAttribute('value', url_id);
-								$('userbox').insert('<a href="http://tweetmeme.com/story/' + url_id + '" onclick="javascript:window.close();" target="_blank" style="font-size: 10px; color: #999; text-decoration: underline;" id="morelink">More</a>');
+								$("tweettext").update(formatTweet(data.tweet));
+								$("tweet").show();
 
-								console.log('Asking Retwt.me for short URL...');
+								console.log('Getting "More" link...');
 
 								/**
-								* Hit Retwt.me for a short URL
+								* Hit TweetMeme for the URL ID
 								*/
-								new Ajax.Request("http://api.retwt.me/shorten.json?longUrl=" + data.story.url,
+								new Ajax.Request("http://api.tweetmeme.com/url_info.json?url=" + tab.url,
 									{
 										/**
 										* Successful response
 										*/
 										onSuccess: function(transport) {
-											console.log('Data received from Retwt.me...');
+											console.log('URL Info data received..');
 											/**
 											* Convert response to JS object and make sure
-											* Retwt.me didn't return an error
+											* there's no error
 											*/
 											data = transport.responseText.evalJSON();
 											if (data.status == 'success') {
-												console.log('Data from Retwt.me is valid.');
+												console.log('Data from URL Info is valid.');
 												/**
-												* Append on the short URL, and render the window
+												* Globally set the URL ID data
 												*/
-												$("tweettext").insert(" " + data.shortUrl);
-												$("tweet").show();
+												url_id = extractId(data.story.tm_link);
+												console.log('URL ID is ' + url_id);
+												$("id").writeAttribute('value', url_id);
+												/**
+												* Create the "More" link and display it
+												*/
+												$('userbox').insert('<a href="http://tweetmeme.com/story/' + url_id + '" onclick="javascript:window.close();" target="_blank" style="font-size: 10px; color: #999; text-decoration: underline;" id="morelink">More</a>');
+
 											} else {
-												/**
-												* Retwt.me returned an error
-												*/
-												console.error('Invalid data returned from Retwt.me');
-												error("Error shortening URL with Retwt.me");
+												console.log('Failed to obtain data from TweetMeme');
 											}
 										},
 
@@ -192,8 +186,7 @@ document.observe("dom:loaded", function() {
 										* Errored response
 										*/
 										onFailure: function(transport) {
-											console.log('Error receiving data from Retwt.me');
-											error("Error shortening URL with Retwt.me");
+											console.log('Error receiving data from URL Info');
 										}
 									}
 								);
