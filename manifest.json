@@ -1,6 +1,6 @@
 {
 	"name": "TweetMeme",
-	"version": "0.38",
+	"version": "0.4",
 	"description": "Retweet the hottest stories on Twitter with TweetMeme",
 	"icons": {
 		"16": "16x16.png",
@@ -17,7 +17,6 @@
 	"permissions": [
 		"tabs",
 		"http://api.tweetmeme.com/*",
-		"http://tweetmeme.com/*",
-		"http://api.retwt.me/*"
+		"http://tweetmeme.com/*"
 	]
 }
