@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="options.css" type="text/css" charset="utf-8" />
+		<script src="blacklist.js"></script>
+		<script src="options.js"></script>
+	</head>
+	<body onload="updateBlacklistOutput();">
+		<div id="wrapper">
+			<div id="header">
+	    		<h2 id="logo"><a href="http://tweetmeme.com" title="TweetMeme, Hottest Stories on Twitter">TweetMeme, Hottest Stories on Twitter</a></h2>
+	    	</div>
+	    	<div id="content" class="g25 submenu">
+	    		<div class="g4 first">
+            		<ul id="submenu">
+            			<li class="selected"><a href="#about">About</a></li>
+            			<li><a href="#options">Options</a></li>
+            			<li><a href="#faq">FAQ</a></li>
+            			<li><a href="http://tweetmeme.com" target="_blank">TweetMeme</a></li>
+            			<li><a href="http://tweetmeme.com/about" target="_blank">About TweetMeme</a></li>
+            			<li><a href="http://tweetmeme.com/about/retweet_button" target="_blank">TweetMeme Retweet Button</a></li>
+            		</ul>
+            	</div>
+            	<div class="g20 last">
+					<h1 id="about">About TweetMeme Extension</h1>
+					<p>The TweetMeme Chrome Extension allows you to take a little version of our TweetMeme button with you anywhere on the web.</p>
+					<p>It shows you a realtime count of the number of tweets the page you're currently viewing has, as well as allowing you to tweet
+					the page from wherever you are - just click on the button!</p>
+					<h1 id="options">Options</h1>
+					<h3>Blacklist</h3>
+					<p>You can blacklist domains for which you do not want the button to grab a count for.</p>
+					<p>When you visit URLs on these domains, we will not contact TweetMeme to get tweet count details.</p>
+					<p>However, even if a URL is blacklisted, you can still tweet the link by clicking the button. This will send the URL to TweetMeme to make the tweet for you. If you do not want this, simply do not click the button.</p>
+					<p>We will blacklist that domain and all subdomains, so blacklisting <em>example.com</em> will also block <em>www.example.com</em> etc.</p>
+					<h4>Currently Blacklisted</h4>
+					<ul id="domains">
+					</ul>
+					<h4>Add</h4>
+					<p>e.g. <em>example.com</em></p>
+					<form action='javascript:processAddToBlacklist();' class="form">
+						<input type="text" id="blacklist_input" class="field" />
+						<input type="submit" value="Add" class="gbtn" style="margin-top: 0px;" />
+					</form>
+					<h1 id="faq">FAQ</h1>
+					<h3>Why is the button green but with no number?</h3>
+					<p>This means either TweetMeme doesn't have any data for this URL, or hasn't seen any tweets for this URL for a long time. Why not tweet it now?</p>
+					<h3>Why is the button grey?</h3>
+					<p>The button greys out when the URL of the tab you are currently viewing is invalid.</p>
+					<p>This includes pages that use a secure connection, don't begin with 'http://', are internal Chrome pages (like the Extensions or
+					History tab) or something unexpected.</p>
+					<h3>Why is the button red?</h3>
+					<p>This means you have blacklisted the URL. Check out the <a href="#options">Options</a> above to add or remove URLs from the blacklist.</p>
+					<h3>What about privacy?</h3>
+					<p>TweetMeme takes your privacy very seriously. Check out our <a href="http://tweetmeme.com/about/privacy" target="_blank">main Privacy Policy</a>.</p>
+					<p>We also recognise we need to say a bit more about this extension and how it uses your personal data.</p>
+					<p>When you load a tab for a URL that is not invalid (grey button) and is not blacklisted (red button) we ask TweetMeme's servers to give us a count
+					of tweets for the tab of that URL. During this process we don't transmit, store or log any of your personal data.</p>
+					<p>We then cache the result of that request in your browser for a little while to ease up the load on our servers. This data is only
+					available to the TweetMeme Extension itself, can't be accessed by anyone else on your computer (unless you use the inspector yourself to
+					dive into it) and is never sent off to TweetMeme.</p>
+					<p>Please feel free to <a href="http://help.tweetmeme.com/contact/" target="_blank">get in touch</a> if you have any concerns about your privacy while using the Extension, and we'll be happy to clarify.</p>
+				</div>
+			</div>
+			<div class="copyright">
+				&copy; Copyright Favorit Ltd 2010
+			</div>
+		</div>
+	</body>
+</html>

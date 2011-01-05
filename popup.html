@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="http://tweetmeme.com/styles/default.css" type="text/css" charset="utf-8" />
+		<script src="prototype.js" ></script>
+		<script src="http://tweetmeme.com/scripts/tweetmeme.js"></script>
+		<script src="popup.js"></script>
+
+	</head>
+	<body id="partial" style="width: 450px; height: 200px; margin: 0; padding: 0; background: url(http://tweetmeme.com/images/loading.gif) center center no-repeat;">
+		<div id="tweet">
+			<div class="header">
+				<a href="http://tweetmeme.com" target="_blank" title="Go to TweetMeme" class="logo" onclick="window.close();">TweetMeme</a>
+				<div class="user" id="userbox"></div>
+			</div>
+
+			<form class="form content" id="form">
+				<div id="counter">140</div>
+				<h2>Retweet This</h2>
+				<div class="textarea">
+					<textarea id="tweettext" style="height: 50px;"></textarea>
+				</div>
+				<input type="hidden" id="id" value="" />
+				<input type="hidden" id="source" value="" />
+				<input type="hidden" id="advertid" value="" />
+			</form>
+
+			<script type="text/javascript">
+
+			var lengthCheck = function() {
+				// get the counter
+				var counter = $('counter');
+				// do we have the tweettext
+				var tweettext = $('tweettext').up();
+				// grab the yes button
+				var yes = $$('.btn.yes')[0];
+				// fun
+				var fun = function() {
+					if ($('tweettext')) {
+						// get the tweet text length
+						var length = $F('tweettext').length;
+						// update the counter
+						counter.innerHTML = (140 - length);
+						// have we gone over 140 characters?
+						if (length > 140) {
+							counter.addClassName('error');
+							yes.addClassName('disable');
+						} else {
+							counter.removeClassName('error');
+							yes.removeClassName('disable');
+						}
+						setTimeout(fun, 200);
+					}
+				}
+				setTimeout(fun, 200);
+			}
+
+			if ($('tweettext')) {
+				if ($$('.btn.yes').length > 0) {
+					lengthCheck();
+				} else {
+					document.observe("dom:loaded", function() {
+						lengthCheck();
+					});
+				}
+			}
+			</script>
+
+			<div class="controls overflow clear" id="controls">
+				<a class="btn" href="#" target="" id="no">
+					Cancel
+				</a>
+				<a class="btn yes" href="#" target="" id="yes">
+					<span>Tweet</span>
+				</a>
+			</div>
+		</div>
+	</body>
+</html>

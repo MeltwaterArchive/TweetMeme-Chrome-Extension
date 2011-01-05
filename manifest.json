@@ -1,0 +1,23 @@
+{
+	"name": "TweetMeme",
+	"version": "0.38",
+	"description": "Retweet the hottest stories on Twitter with TweetMeme",
+	"icons": {
+		"16": "16x16.png",
+		"48": "48x48.png",
+		"128": "128x128.png"
+	},
+	"browser_action": {
+		"default_title": "TweetMeme",
+		"default_icon": "icon.png",
+		"popup": "popup.html"
+	},
+	"background_page": "background.html",
+	"options_page": "options.html",
+	"permissions": [
+		"tabs",
+		"http://api.tweetmeme.com/*",
+		"http://tweetmeme.com/*",
+		"http://api.retwt.me/*"
+	]
+}

@@ -1,0 +1,269 @@
+/*
+* Tweetmeme CSS v4
+* Daniel Saxil-Nielsen
+* TweetMeme
+* http://tweetmeme.com
+*/
+
+/* Typography
+------------------ */
+
+    body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-style: normal; font-weight: normal;
+		   text-transform: normal; letter-spacing: normal; line-height: 1.4em; color: #333333; }
+
+	a { color: #45B7DA; text-decoration: none; }
+	a:hover { color: #38525A; }
+	a:active { color: #999999; }
+	a img { border: none; }
+
+	/* headings */
+	h1 { clear: both; color: #38525A; font-size: 18px; font-weight: normal; line-height: 20px; margin: 20px 0px 10px;
+		 padding: 0px; }
+	h2 { clear: both; color: #38525A; font-size: 16px; font-weight: normal; margin: 10px 0px;  }
+	h3 { clear: both; color: #38525A; font-size: 14px; font-weight: normal; margin: 10px 0px;  }
+	h4 { clear: both; font-weight: bold; margin: 0px 0px 10px; }
+
+	/* paragraph */
+	p { clear: both; overflow: hidden; }
+	p:last-child { margin-bottom: 0px; }
+	p.attributes { font-style: italic; }
+
+	.center { text-align: center; }
+	.code { font-family: Consolas, "Courier New", monospace; font-size: 11px; }
+
+	.red { color: #9E1111; }
+	.green { color: #4B6E14; }
+	.grey { color: #DCDCDC; }
+
+/* Helpers
+------------------ */
+
+	.nomargin { margin-bottom: 0px; }
+
+	.margin-left { margin-left: 10px; }
+	.margin-right { margin-right: 10px; }
+
+	.border-bottom { border-bottom: 1px dotted #DCDCDC; margin-bottom: 10px; overflow: hidden; padding-bottom: 10px; }
+
+	.help { padding: 20px; background: #E8F7FB; margin-bottom: 20px; }
+    .error { padding: 20px; background: #FFF0F0; margin-bottom: 20px; }
+    .error h4 { color: #9E1111; }
+    .success { background: #EAF5D8; margin-bottom: 20px; padding: 20px; }
+    .success h4 { color: #4B6E14; }
+
+    .breadcrumb { margin: 15px 0px 0px 0px; padding: 0px; list-style: none; overflow: hidden; }
+    .breadcrumb li { float: left; padding: 5px 14px 0px 0px; margin-right: 10px; background: url('http://tweetmeme.com/images/new/icons/arrow.png') no-repeat right 10px; }
+    .breadcrumb li:last-child { background: none; }
+    .breadcrumb + h1 { margin-top: 15px; }
+
+/* Grid
+------------------ */
+
+	.g1, .g2, .g3, .g4, .g5, .g6, .g7, .g8, .g9, .g10, .g11, .g12, .g13,
+	.g14, .g15, .g16, .g17, .g18, .g19, .g20, .g21, .g22, .g23, .g24, .g25 {
+		display:inline;
+		float: left;
+		position: relative;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+
+	.g1 { width:20px; } .g2 { width:60px; } .g3 { width:100px; } .g4 { width:140px; } .g5 { width:180px; }
+	.g6 { width:220px; } .g7 { width:260px; } .g8 { width:300px; } .g9 { width:340px; } .g10 { width:380px; }
+	.g11 { width:420px; } .g12 { width:460px; } .g13 { width:500px; } .g14 { width:540px; } .g15 { width:580px; }
+	.g16 { width:620px; } .g17 { width:660px; } .g18 { width:700px; } .g19 { width:740px; } .g20 { width:780px; }
+	.g21 { width:820px; } .g22 { width:860px; } .g23 { width:900px; } .g24 { width:940px; } .g25 { width:960px; }
+
+	.first { margin-left: 0px; clear: left; }
+	.last { margin-right: 0px; }
+
+/* Page Layout
+------------------ */
+
+	body { background: #F3F4F4; }
+
+    #wrapper,
+    .wrapper { margin: 0px auto; width: 980px; overflow: hidden; }
+
+    #content { background: #FFFFFF; border: 1px solid #DCDCDC; min-height: 500px; }
+    #content.submenu { background: #FFFFFF url('http://tweetmeme.com/images/new/body/submenu.png') repeat-y; }
+    #content.sidebar { background: #FFFFFF; padding-left: 20px; width: 940px; }
+
+    #content.submenu #sidebar { background: #FBFBFB; border-right: 1px solid #DCDCDC; }
+	#content.sidebar #sidebar { background: #FBFBFB; border-left: 1px solid #DCDCDC; padding: 19px; }
+
+/* Header
+------------------ */
+
+    #header { height: 50px; margin: 0px 8px 0px 10px; padding: 20px 0px 0px; position: relative; }
+    #header #logo { float: left;  margin: 0px; ; padding: 0px; }
+    #header #logo a { background: url('http://tweetmeme.com/images/tweetmeme.png') no-repeat; cursor: pointer; display: block; height: 31px;
+                      overflow: hidden; text-indent: 900px; width: 258px; white-space: nowrap; }
+
+    #header .right { margin-top: 1px; }
+
+    /* user */
+    #header .user { float: left; }
+    #header .user .avatar { background: #FFFFFF; border: 1px solid #DCDCDC; display: block; float: left; padding: 2px; }
+    #header .user span { display: block; float: left; line-height: 30px; margin: 0px 0px 0px 5px; }
+    #header .user a { font-weight: bold; }
+
+	/* search box */
+	#header .search { float: left; height: 30px; margin-left: 10px; overflow: hidden; }
+    #header .search #for { border: 1px solid #dddddd; border-right: 0px; float: left; height: 16px; padding: 6px; }
+    #header .search .submit { background: url('http://tweetmeme.com/images/new/sprite.png') no-repeat 0px -114px; border: 0px;
+                              cursor: pointer; height: 30px; padding-top: 30px; overflow: hidden; width: 37px; }
+    #header .search .submit:hover { background-position: -37px -114px; }
+
+/* Menus
+------------------ */
+
+	/* submenu */
+	#submenu { list-style: none; margin: 10px 0px 0px 0px; padding: 0px; }
+	#submenu li a { display: block; padding: 11px 15px;  }
+	#submenu li.selected a,
+	#submenu li a:hover,
+	#submenu li a:focus { background: #FFFFFF; border-top: 1px solid #DCDCDC; border-bottom: 1px solid #DCDCDC;
+	                      color: #333333; padding: 10px 15px; }
+	#submenu li.selected + li a:hover { border-top: 1px solid #FFFFFF; }
+
+/* Form
+------------------- */
+
+	/* form stylings */
+	form { margin: 0px; padding: 0px; }
+	form label,
+	.label { float: left; font-weight: bold; width: 150px; }
+	form p, form div.p { clear: left; margin: 0px 0px 15px; padding: 0px; overflow: hidden; }
+
+
+	form input.field,
+	form textarea.field {  }
+	/* textarea specific */
+	form textarea.field { height: 50px; }
+
+
+	form select.field { height: 30px; float: left; padding: 5px 5px 4px 5px; }
+	form select + .left { margin-top: 3px; }
+	form select.fullwidth { width: 230px; }
+	form select[multiple="multiple"] { height: 200px; }
+
+	form .indent { color: #666666; clear: left; display: block; float: left; margin: 5px 0px 0px 150px; font-size: 12px; }
+	/* inline element that shows an option has been added */
+	form .options { margin-left: 150px; }
+	form .option { border: 1px solid #DCDCDC; cursor: pointer; float: left; margin: 0px 5px 5px 0px;
+	               padding: 4px 10px 4px; }
+	form .option:hover { border: 1px solid #9E1111; }
+	/* elements which have errored */
+	form .field.elementerror { border-color: #9E1111; }
+
+	/* General defaults */
+	form input,
+	form select,
+	form textarea { border: 1px solid #DCDCDC; border-left: 5px solid #DCDCDC; }
+	form input:focus,
+	form select:focus,
+	form textarea:focus { border-left: 5px solid #95CD3C; }
+
+	/* textboxes/textarea */
+	form .field,
+	form textarea,
+	form input[type="text"] { float: left; height: 18px; padding: 5px 5px 4px 5px; width: 220px; }
+
+	form textarea.editor { border: 1px solid #DCDCDC; height: 300px; padding: 10px; overflow: auto; white-space: nowrap;
+	                       width: 758px; }
+	form textarea.editor:focus { border-right: 1px solid #DCDCDC; }
+
+	/* checkboxes/radio buttons */
+	form input[type="radio"] + label,
+	form input[type="checkbox"] + label { cursor: pointer; float: none; font-weight: normal; margin: 0px 10px 0px 0px;
+										  width: auto; }
+	form input[type="radio"],
+	form input[type="checkbox"] { cursor: pointer; margin-left: 0px; }
+
+
+	form .thumb { border: 1px solid #DCDCDC; display: block; height: 80px; margin-left: 150px; width: 80px; }
+
+	/* grey button */
+    .btn { background: url('http://tweetmeme.com/images/btn.gif') repeat-x 0px 0px; border: 1px solid #CCCCCC; color: #666666;
+           cursor: pointer; display: inline-block; font-family: Helvetica,Arial,Verdana; font-size: 12px;
+           overflow: visible; line-height: 15px !important; margin: 0px 10px 0px 0px; padding: 5px 10px 5px 10px;
+           text-align: center; }
+    .btn:hover, .btn:focus, .btn:active { background-position: 0px -26px; color: #424242; }
+    .btn.disable { color: #999999; cursor: auto; background: #CCCCCC; }
+    .btn.loading { overflow: hidden; }
+    .btn.no-margin { margin: 0px; }
+
+    /* green button */
+    a.gbtn,
+    .gbtn { background: #95cd3c; border: 1px solid #82b82c; color: #FFFFFF; display: block; font-size: 14px;
+            float: left; line-height: 19px; padding: 4px 10px; text-shadow: #74a02f 1px 1px 0px; }
+    a:hover.gbtn,
+    .gbtn:hover,
+    .gbtn:focus,
+    .gbtn:active { background: #82b82c; border: 1px solid #82b82c; color: #FFFFFF; cursor: pointer; }
+
+    /* red button */
+    a.rbtn,
+    .rbtn { background: #cb0008; border: 1px solid #9e0b0f; color: #FFFFFF; display: block; font-size: 14px;
+            float: left; padding: 4px 10px; text-shadow: #9e0b0f 1px 1px 0px; }
+    a:hover.rbtn,
+    .rbtn:hover,
+    .rbtn:focus,
+    .rbtn:active { background: #9e0b0f; border: 1px solid #9e0b0f; color: #FFFFFF; cursor: pointer; }
+
+    .btn + a.cancel, .gbtn + a.cancel { display: block; float: left; line-height: 30px; margin: 0px 0px 0px 10px; }
+    .field + .gbtn { margin-left: 10px; }
+
+/* Table
+------------------- */
+
+	table.small { border-collapse: collapse; width: 100%; }
+	table.small tr { border-bottom: 1px dotted #DCDCDC; }
+	table.small tr td { padding: 5px; }
+	table.small tr td.center { text-align: center; }
+
+	/* table */
+    table.large { empty-cells: show; width: 100%; }
+    table.large th { background: #FBFBFB; border-bottom: 1px solid #DCDCDC; border-top: 1px solid #DCDCDC;
+                     color: #666666; font-weight: bold; padding: 5px 10px; text-align: left; }
+    table.large tr:hover { background: #f9f9f9; }
+    table.large td { border-bottom: 1px dotted #DDDDDD; padding: 5px 10px; }
+    table.large td.last,
+    table.large th.last { border-bottom: 0px; }
+    table.large th:first-child { border-left: 1px solid #DDDDDD; }
+    table.large th:last-child { border-right: 1px solid #DDDDDD; }
+
+    table.large th.none { background: none; border: none; border-bottom: 1px dotted #DCDCDC; }
+
+/* Footer
+------------------- */
+
+    #footer { overflow: hidden; zoom: 1; clear: both; margin: 20px 8px 15px 11px; border-bottom: 1px solid #DCDCDC; padding: 10px 20px; }
+    #footer .col { overflow: hidden; float: left; width: 182px; }
+    #footer .col ul { list-style: none; margin: 0px; padding: 0px; height: 115px; }
+    #footer .col a { color: #358CA7; }
+    #footer .col .title { font-weight: bold; margin-bottom: 5px; }
+    #footer .col.last ul { border-right: 0px; }
+
+    .copyright { font-size: 11px; color: #666666; padding-left: 30px; }
+
+/* custom blacklist list */
+	#domains {
+		list-style-type: none;
+		width: 30%;
+		padding-left: 5px;
+		}
+	#domains li {
+		height: 30px;
+		}
+	#domains li span {
+		float: left;
+		}
+	#domains li button {
+		margin-left: 20px;
+		height: 20px;
+		padding: 1px 6px;
+		float: right;
+		}
