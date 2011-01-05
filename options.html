@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8" />
 		<link rel="stylesheet" href="options.css" type="text/css" charset="utf-8" />
 		<script src="blacklist.js"></script>
 		<script src="options.js"></script>
 	</head>
-	<body onload="updateBlacklistOutput();">
+	<body onload="updateBlacklistOutput();selectLang();">
 		<div id="wrapper">
 			<div id="header">
 	    		<h2 id="logo"><a href="http://tweetmeme.com" title="TweetMeme, Hottest Stories on Twitter">TweetMeme, Hottest Stories on Twitter</a></h2>
@@ -27,6 +28,19 @@
 					<p>It shows you a realtime count of the number of tweets the page you're currently viewing has, as well as allowing you to tweet
 					the page from wherever you are - just click on the button!</p>
 					<h1 id="options">Options</h1>
+					<h3>Language</h3>
+					<p>TweetMeme has the ability to automatically translate the tweet text you send into a language of your choice.</p>
+					<p>Select the language you wish to have all tweets translated into. Select "No translation" to keep all tweets in their original language.</p>
+					<select id="lang" onchange="javascript:updateLang()">
+						<option value="">No translation</option>
+						<option value="en">English</option>
+						<option value="fr">Français</option>
+						<option value="it">Italiano</option>
+						<option value="de">Deutsch</option>
+						<option value="ja">日本 (Japanese)</option>
+						<option value="es">Español</option>
+						<option value="pt">Português</option>
+					</select>
 					<h3>Blacklist</h3>
 					<p>You can blacklist domains for which you do not want the button to grab a count for.</p>
 					<p>When you visit URLs on these domains, we will not contact TweetMeme to get tweet count details.</p>

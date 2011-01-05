@@ -126,7 +126,14 @@ document.observe("dom:loaded", function() {
 				* This will force TweetMeme to resolve it and provide a title if
 				* it doesn't exist on TweetMeme already.
 				*/
-				new Ajax.Request("http://api.tweetmeme.com/v2/buildTweet.json?url=" + tab.url,
+				language = localStorage["language"];
+				if (language==undefined) {
+					language = "";
+					localStorage["language"] = "";
+				}
+				console.log("Translation: '" + language + "'");
+
+				new Ajax.Request("http://api.tweetmeme.com/v2/buildTweet.json?translate=" + language + "&url=" + tab.url,
 					{
 						/**
 						* Successful response

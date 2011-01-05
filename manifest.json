@@ -1,6 +1,6 @@
 {
 	"name": "TweetMeme",
-	"version": "0.4",
+	"version": "0.50",
 	"description": "Retweet the hottest stories on Twitter with TweetMeme",
 	"icons": {
 		"16": "16x16.png",

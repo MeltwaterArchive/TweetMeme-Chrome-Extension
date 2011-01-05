@@ -45,3 +45,23 @@ function updateBlacklistOutput()
 		}
 	}
 }
+
+/**
+* Called when lang dropdown is changed to save the lang code
+*/
+function updateLang()
+{
+	langbox = document.getElementById('lang');
+	localStorage["language"] = langbox.value;
+}
+
+/**
+* Populates the language dropdown with the right option
+*/
+function selectLang()
+{
+	lang = localStorage["language"];
+	if (lang!=undefined) { // a lang is defined
+		document.getElementById('lang').value = lang;
+	}
+}
